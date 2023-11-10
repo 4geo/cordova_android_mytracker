@@ -1,0 +1,17 @@
+{
+  "name": "cordova-mytracker",
+  "version": "0.1.0",
+  "description": "",
+  "cordova": {
+    "id": "MyTracker",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}
