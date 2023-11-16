@@ -21,15 +21,15 @@ public class MyTrackerPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("init")) {
+        if (action.equals("initTracker")) {
             String message = args.getString(0);
-            this.init(message, callbackContext);
+            this.initTracker(message, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void init(String SDK_KEY, CallbackContext callbackContext) {
+    private void initTracker(String SDK_KEY, CallbackContext callbackContext) {
 
         try {
             if (SDK_KEY != null && SDK_KEY.length() > 0) {

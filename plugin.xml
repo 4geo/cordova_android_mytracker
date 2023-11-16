@@ -29,4 +29,19 @@
 
 		<source-file src="src/android/MyTrackerPlugin.java" target-dir="src/MyTracker" />
 	</platform>
+
+	<platform name= "ios">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="MyTrackerPlugin">
+                <param name="ios-package" value="MyTrackerPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/MyTrackerPlugin.h" />
+        <source-file src="src/ios/MyTrackerPlugin.m" />        
+
+        <framework src="myTrackerSDK" type="podspec" spec="3.1.1" />
+
+    </platform>
 </plugin>
