@@ -32,16 +32,23 @@
 
 	<platform name= "ios">
 
-        <config-file target="config.xml" parent="/*">
-            <feature name="MyTrackerPlugin">
-                <param name="ios-package" value="MyTrackerPlugin"/>
-            </feature>
-        </config-file>
+		<config-file target="config.xml" parent="/*">
+			<feature name="MyTrackerPlugin">
+				<param name="ios-package" value="MyTrackerPlugin"/>
+			</feature>
+		</config-file>
 
-        <header-file src="src/ios/MyTrackerPlugin.h" />
-        <source-file src="src/ios/MyTrackerPlugin.m" />        
+		<header-file src="src/ios/MyTrackerPlugin.h" />
+		<source-file src="src/ios/MyTrackerPlugin.m" />
 
-        <framework src="myTrackerSDK" type="podspec" spec="3.1.1" />
+		<podspec>
+			<config>
+				<source url="https://github.com/CocoaPods/Specs.git"/>
+			</config>
+			<pods use-frameworks="true">
+				<pod name="myTrackerSDK" />
+			</pods>
+		</podspec>
 
-    </platform>
+	</platform>
 </plugin>

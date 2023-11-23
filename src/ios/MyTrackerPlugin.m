@@ -30,6 +30,24 @@
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+- (void) trackEvent:(CDVInvokedUrlCommand *)command
+{
+    NSString *eventName = [command argumentAtIndex:0];
+    NSDictionary* params = [command argumentAtIndex:1];
+    NSMutableDictionary<NSString *, NSString *> *eventCustomParams = [[NSMutableDictionary alloc]init];
+    
+    for (NSString* key in params) {
+        NSString* value = (NSString *) params[key];
+        [eventCustomParams addEntriesFromDictionary:@{[NSString stringWithFormat:@"%@", key]:[NSString stringWithFormat:@"%@", value]}];
+    }
+    
+    [MRMyTracker trackEventWithName:eventName eventParams:eventCustomParams];
+    
+    // Send callback successfull
+    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:command.arguments];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
 #pragma mark - Configuration
 
 - (void) setTrackingLaunchEnabled:(CDVInvokedUrlCommand *)command

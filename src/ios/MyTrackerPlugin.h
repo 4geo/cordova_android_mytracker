@@ -7,6 +7,7 @@
 
 - (void)initTracker:(CDVInvokedUrlCommand *)command;
 - (void)setCustomUserId:(CDVInvokedUrlCommand *)command;
+- (void)trackEvent:(CDVInvokedUrlCommand *)command;
 
 // ------ Configuration
 
