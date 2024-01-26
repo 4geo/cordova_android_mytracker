@@ -21,7 +21,7 @@
 		
 		
 
-		<framework src="com.my.tracker:mytracker-sdk:3.2.0" />
+		<framework src="com.my.tracker:mytracker-sdk:3.0.12" />
 		
 		<!-- https://mvnrepository.com/artifact/com.google.android.gms/play-services-ads-identifier -->
 		<!-- <framework src="com.google.android.gms:play-services-ads-identifier:18.0.0" / -->
