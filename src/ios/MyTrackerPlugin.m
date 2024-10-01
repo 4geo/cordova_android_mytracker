@@ -108,34 +108,6 @@
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
-- (void) setRegion:(CDVInvokedUrlCommand *)command
-{
-    NSNumber *packet = [command argumentAtIndex:0];
-    int index = [packet intValue];
-    MRRegion region = MRRegionNotSet;
-
-    switch (index)
-    {
-        case 0: // Default
-            // region = MRRegionNotSet;
-            break;
-        case 1: // Russia
-            region = MRRegionRu;
-            break;
-        case 2: // Europe
-            region = MRRegionEu;
-            break;
-        // default: // Default
-            // region = MRRegionNotSet;
-    }
-    
-    MRMyTrackerConfig *trackerConfig = [MRMyTracker trackerConfig];
-    trackerConfig.region = region;
-    
-    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:command.arguments];
-    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-}
-
 #pragma mark - Android
 
 - (void) setTrackingLocationEnabled:(CDVInvokedUrlCommand *)command

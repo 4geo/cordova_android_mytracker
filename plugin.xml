@@ -31,6 +31,7 @@
 	</platform>
 
 	<platform name= "ios">
+	    <preference name="deployment-target" value="13.0"/>
 
 		<config-file target="config.xml" parent="/*">
 			<feature name="MyTrackerPlugin">
@@ -46,7 +47,7 @@
 				<source url="https://github.com/CocoaPods/Specs.git"/>
 			</config>
 			<pods use-frameworks="true">
-				<pod name="myTrackerSDK" />
+				<pod name="myTrackerSDK" spec="3.2.0" />
 			</pods>
 		</podspec>
 
